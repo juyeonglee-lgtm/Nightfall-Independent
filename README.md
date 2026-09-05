@@ -1,2 +1,28 @@
-# Nightfall-Independent
-Standalone browser action game with four classes, 100 rounds, weapon audio and BGM
+# Nightfall Independent
+
+브라우저에서 실행하는 독립형 액션 게임입니다. 네 직업, 100라운드, 보스전과 성장 카드가 포함되어 있습니다.
+
+## 플레이
+
+https://juyeonglee-lgtm.github.io/Nightfall-Independent/
+
+PC 브라우저에서 플레이하세요. 게임을 클릭하거나 키를 누르면 BGM이 시작됩니다. 오른쪽 아래에서 BGM과 음량을 조절할 수 있습니다.
+
+## v54 변경 사항
+
+- 검사 공격 이미지 크기 보정
+- 고급 카드 등장 확률 감소
+- 후반 몬스터 체력·공격력·이동 속도 강화
+- BGM 복구 및 음량 조절
+- 무기별 휘두름·찌르기 효과음과 타격음
+- BGM 기본 음량 증가
+
+## 로컬 실행
+
+저장소 전체를 내려받아 압축을 풀고 Windows에서 `Play.cmd`를 실행하세요.
+`http://localhost:8912/`에서 열립니다. 다른 게임 폴더나 외부 이미지 서버가 필요하지 않습니다.
+
+## 구성
+
+`index.html`, JavaScript 파일, PNG 이미지로 구성된 정적 웹 게임입니다.
+GitHub Pages는 `main` 브랜치의 루트 폴더를 게시합니다.

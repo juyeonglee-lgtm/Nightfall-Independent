@@ -1,0 +1,2 @@
+function own27(img,row){if(row===2||!img)return img;let w=img.width,h=img.height,cw=w/3,mid=w/2,span=(row===1||row===3)?.98:.90,left=Math.floor(mid-cw*span),right=Math.ceil(mid+cw*span),q=img.getContext('2d',{willReadFrequently:true}),z=q.getImageData(0,0,w,h),d=z.data;for(let y=0;y<h;y++)for(let x=0;x<w;x++)if(x<left||x>right)d[(y*w+x)*4+3]=0;q.putImageData(z,0,0);return img}
+function apply27(){if(!READY25){setTimeout(apply27,100);return}for(let r of [0,1,3])for(let f=0;f<8;f++)ISO25[r][f]=own27(ISO25[r][f],r)}apply27();
