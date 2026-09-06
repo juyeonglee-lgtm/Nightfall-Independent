@@ -46,7 +46,10 @@ spriteActor=function(e,pl=0){
  if(!pl||drinkT12>0||p.roll||(!p.attack&&!p.parry&&!success)||!heroMotion61.frames[weapon])return heroActor61(e,pl);
  const z=Math.max(0,Math.min(1,p.attackMax?1-p.attack/p.attackMax:0));
  const frame=heroMotion61.frames[weapon][heroFrame61(z,weapon,p.parry,success)];
- const height=heroHeights61[weapon]||(heroHeights61[weapon]=heroHeight61(weapon));
+ // Do not permanently cache a fallback while the original idle art is still loading.
+ const calibrated=weapon===1||(weapon===0?swordHeight53>0:weapon===3?!!MAGE46:READY25&&!!ISO25[2][0]&&!!CLEAN10);
+ const height=heroHeights61[weapon]||heroHeight61(weapon);
+ if(calibrated)heroHeights61[weapon]=height;
  const scale=height/frame.body,a=p.attack?(p.swingAng??p.ang):p.ang,face=Math.cos(a)<0?-1:1;
  // Continuous root displacement; the character itself is never stretched or cross-faded.
  const ease=t=>t*t*(3-2*t),drive=z<.30?-3*Math.sin(z/.30*Math.PI):z<.49?ease((z-.30)/.19):1-ease(Math.min(1,(z-.49)/.51));
